@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Documentation</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📚 API Documentation</h1>
+        </header>
+        
+        <div class="api-docs">
+            <div class="endpoint">
+                <h3>POST /api/chat</h3>
+                <p>Chat with the AI assistant</p>
+                <pre><code>{
+  "message": "string (required)",
+  "sessionId": "string (optional)",
+  "options": {
+    "enableResearch": boolean,
+    "enableCodeGeneration": boolean
+  }
+}</code></pre>
+            </div>
+            
+            <div class="endpoint">
+                <h3>POST /api/generate/code</h3>
+                <p>Generate code from description</p>
+                <pre><code>{
+  "description": "string (required)",
+  "options": {
+    "language": "string",
+    "framework": "string",
+    "complexity": "string",
+    "includeTests": boolean,
+    "includeComments": boolean
+  }
+}</code></pre>
+            </div>
+            
+            <div class="endpoint">
+                <h3>POST /api/review/code</h3>
+                <p>Review code for improvements</p>
+                <pre><code>{
+  "code": "string (required)",
+  "options": {
+    "focus": ["best_practices", "performance", "security"],
+    "language": "string"
+  }
+}</code></pre>
+            </div>
+            
+            <div class="endpoint">
+                <h3>POST /api/fix/code</h3>
+                <p>Fix buggy code</p>
+                <pre><code>{
+  "code": "string (required)",
+  "error": "string (required)"
+}</code></pre>
+            </div>
+            
+            <div class="endpoint">
+                <h3>POST /api/research/search</h3>
+                <p>Search for information</p>
+                <pre><code>{
+  "query": "string (required)",
+  "options": {
+    "maxResults": number
+  }
+}</code></pre>
+            </div>
+            
+            <div class="endpoint">
+                <h3>POST /api/filter/analyze</h3>
+                <p>Analyze content for filtering</p>
+                <pre><code>{
+  "text": "string (required)"
+}</code></pre>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

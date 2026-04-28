@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Chatbot - Chat</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="chat-container">
+        <header>
+            <h1>🤖 AI Chatbot</h1>
+            <div class="status">
+                <span class="status-dot"></span>
+                <span>Online</span>
+            </div>
+        </header>
+        
+        <div class="chat-sidebar">
+            <h3>Quick Actions</h3>
+            <button onclick="setMode('general')">💬 General Chat</button>
+            <button onclick="setMode('code')">💻 Code Generation</button>
+            <button onclick="setMode('research')">🔍 Research</button>
+            <button onclick="setMode('review')">🔧 Code Review</button>
+            
+            <h3>Settings</h3>
+            <label>
+                <input type="checkbox" id="filterToggle" checked>
+                Enable Content Filter
+            </label>
+        </div>
+        
+        <div class="chat-main">
+            <div id="chat-messages" class="chat-messages">
+                <div class="message system">
+                    <div class="message-content">
+                        <p>Welcome to AI Chatbot! I can help you with coding, research, and general conversations.</p>
+                        <p>Try asking:</p>
+                        <ul>
+                            <li>"Write a Python function to sort an array"</li>
+                            <li>"Research the latest AI trends"</li>
+                            <li>"Review this JavaScript code"</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chat-input-area">
+                <div class="mode-indicator" id="modeIndicator">Mode: General</div>
+                <div class="input-container">
+                    <textarea 
+                        id="chat-input" 
+                        placeholder="Type your message here... (Press Enter to send, Shift+Enter for new line)"
+                        rows="1"
+                    ></textarea>
+                    <button id="send-btn" onclick="sendMessage()">Send</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="/js/chat.js"></script>
+</body>
+</html>
